@@ -8,6 +8,7 @@ import pyttsx3
 import schedule
 import time
 from twilio.rest import Client 
+import smtplib 
 
 engine = pyttsx3.init()
 
@@ -25,7 +26,13 @@ def sms(Text):
         from_="+19896449094",
         body=Text)
     print(message.sid)
-
+def email(Text):   
+    s = smtplib.SMTP('smtp.gmail.com', 587)     
+    s.starttls()    
+    s.login("remtask@gmail.com", "Taskrem@2021") 
+    message = Text
+    s.sendmail("remtask@gmail.com", "hi5daksh@gmail.com", message) 
+    s.quit()
 class Task_Rem:
     message = " "
     def task(self):
@@ -41,6 +48,7 @@ class Task_Rem:
             if(y[0]== currentTime()):
                 engine.say(X[0][0])
                 sms(X[0][0])
+                email(X[0][0])
                 engine.runAndWait() 
                 delete = pd.read_csv('Task.csv',index_col = "Task")
                 task= delete.drop(X[0][0])

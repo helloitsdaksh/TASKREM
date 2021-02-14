@@ -18,8 +18,8 @@ def currentTime():
         return time_Rem
 def sms(Text):
      
-    account_sid = "ACbe2dbed530eb0d5ceedcba7e4d5d54e3"
-    auth_token  = "0e356595c8b1a0a0aed0cdbbeda4838c"
+    account_sid = "YOUR SID"
+    auth_token  = "YOUR TOKEN"
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         to="+917574843778", 
@@ -29,9 +29,9 @@ def sms(Text):
 def email(Text):   
     s = smtplib.SMTP('smtp.gmail.com', 587)     
     s.starttls()    
-    s.login("remtask@gmail.com", "Taskrem@2021") 
+    s.login("sender's email id", "sender's password") 
     message = Text
-    s.sendmail("remtask@gmail.com", "hi5daksh@gmail.com", message) 
+    s.sendmail("sender's email id", "Reciver's email id", message) 
     s.quit()
 class Task_Rem:
     message = " "

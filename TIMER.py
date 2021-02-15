@@ -22,8 +22,8 @@ def sms(Text):
     auth_token  = "YOUR TOKEN"
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        to="+917574843778", 
-        from_="+19896449094",
+        to="Your number", 
+        from_="number you get from twilio",
         body=Text)
     print(message.sid)
 def email(Text):   

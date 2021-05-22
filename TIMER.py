@@ -16,31 +16,6 @@ def currentTime():
         time_Rem = str(now.strftime("%I:%M %p"))
         return time_Rem
 def sms(Text):
-     
-<<<<<<< HEAD
-    account_sid = "AC5e7263eb6fabe878ef609a3d6856da47"
-    auth_token  = "3d5132767471e1036271987227d4e9f5"
-    client = Client(account_sid, auth_token)
-    message = client.messages.create(
-        to="+917574843778", 
-        from_="+17208938698",
-        body=Text)
-    print(message.sid)
-def email(Text):   
-    import smtplib 
-
-    email = smtplib.SMTP('smtp.gmail.com', 587) 
-
-    email.starttls() 
-
-    email.login("remtask@gmail.com", "Taskrem@2021") 
-
-    message = Text
-
-    email.sendmail("remtask@gmail.com", "hi5daksh@gmail.com", message) 
-
-    email.quit()
-=======
     account_sid = "YOUR SID"
     auth_token  = "YOUR TOKEN"
     client = Client(account_sid, auth_token)

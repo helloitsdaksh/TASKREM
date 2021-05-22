@@ -17,6 +17,7 @@ def currentTime():
         return time_Rem
 def sms(Text):
      
+<<<<<<< HEAD
     account_sid = "AC5e7263eb6fabe878ef609a3d6856da47"
     auth_token  = "3d5132767471e1036271987227d4e9f5"
     client = Client(account_sid, auth_token)
@@ -39,6 +40,23 @@ def email(Text):
     email.sendmail("remtask@gmail.com", "hi5daksh@gmail.com", message) 
 
     email.quit()
+=======
+    account_sid = "YOUR SID"
+    auth_token  = "YOUR TOKEN"
+    client = Client(account_sid, auth_token)
+    message = client.messages.create(
+        to="Your number", 
+        from_="number you get from twilio",
+        body=Text)
+    print(message.sid)
+def email(Text):   
+    s = smtplib.SMTP('smtp.gmail.com', 587)     
+    s.starttls()    
+    s.login("sender's email id", "sender's password") 
+    message = Text
+    s.sendmail("sender's email id", "Reciver's email id", message) 
+    s.quit()
+>>>>>>> 1435f79849208dca3cc8a75d285cfaa1da83b21e
 class Task_Rem:
     message = " "
     def task(self):

@@ -50,11 +50,11 @@ def viewtask():
 
             tv1.delete(rec)
 
-            delete = pd.read_csv("Task.csv",index_col=0)
+            delete = pd.read_csv("/home/specter/Desktop/python/PROJECTS/TASKREM/Task.csv",index_col=0)
             task = delete.drop(item['task'])
             df = pd.DataFrame(task)
 
-            df.to_csv("Task.csv",mode='w')
+            df.to_csv("/home/specter/Desktop/python/PROJECTS/TASKREM/Task.csv",mode='w')
 
         return None
 
@@ -65,7 +65,7 @@ def viewtask():
 
     def Load_excel_data():
 
-        file_path = "Task.csv"
+        file_path = "/home/specter/Desktop/python/PROJECTS/TASKREM/Task.csv"
         try:
             excel_filename = r"{}".format(file_path)
             if excel_filename[-4:] == ".csv":

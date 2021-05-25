@@ -36,7 +36,7 @@ def gui():
             time_Rem_normal= i.time()
             time_Rem_12hrs = time_Rem_normal.strftime('%I:%M %p')
             message = Task
-        with open('Task.csv','a',newline='') as appendobj:
+        with open('/home/specter/Desktop/python/PROJECTS/TASKREM/Task.csv','a',newline='') as appendobj:
             append = csv.writer(appendobj)
             append.writerow([message,time_Rem_12hrs])
         

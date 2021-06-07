@@ -39,6 +39,7 @@ def gui():
         with open('/home/specter/Desktop/python/PROJECTS/TASKREM/Task.csv','a',newline='') as appendobj:
             append = csv.writer(appendobj)
             append.writerow([message,time_Rem_12hrs])
+       
         
 
 

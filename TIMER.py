@@ -17,8 +17,8 @@ def currentTime():
         return time_Rem
 def sms(Text):
      
-    account_sid = "AC5e7263eb6fabe878ef609a3d6856da47"
-    auth_token  = "3d5132767471e1036271987227d4e9f5"
+    account_sid = ""
+    auth_token  = ""
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         to="+917574843778", 
@@ -34,7 +34,7 @@ def email(Text):
 
     email.login("remtask@gmail.com", "Taskrem@2021") 
 
-    message = "You A Have a Task to be reminded as of now!!!!!"
+    message = "You A Have a Task to be reminded as of now!!!!! from: TaskREM Team"
 
     email.sendmail("remtask@gmail.com", "hi5daksh@gmail.com", message) 
 
@@ -54,7 +54,7 @@ class Task_Rem:
 
             if(y[0]== currentTime()):
                 engine.say(X[0][0])
-                # sms(X[0][0])
+                sms(X[0][0])
                 email(X[0][0])
                 engine.runAndWait() 
                 delete = pd.read_csv('/home/specter/Desktop/python/PROJECTS/TASKREM/Task.csv',index_col = "Task")
